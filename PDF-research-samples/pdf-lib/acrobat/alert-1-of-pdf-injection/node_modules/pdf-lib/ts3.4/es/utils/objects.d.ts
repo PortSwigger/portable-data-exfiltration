@@ -1,0 +1,5 @@
+import { FontNames } from '@pdf-lib/standard-fonts';
+export declare const values: (obj: any) => any[];
+export declare const StandardFontValues: any[];
+export declare const isStandardFont: (input: any) => input is FontNames;
+//# sourceMappingURL=objects.d.ts.map

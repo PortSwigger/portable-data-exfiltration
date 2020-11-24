@@ -1,0 +1,13 @@
+export declare class EncryptedPDFError extends Error {
+    constructor();
+}
+export declare class FontkitNotRegisteredError extends Error {
+    constructor();
+}
+export declare class ForeignPageError extends Error {
+    constructor();
+}
+export declare class RemovePageFromEmptyDocumentError extends Error {
+    constructor();
+}
+//# sourceMappingURL=errors.d.ts.map

@@ -1,0 +1,11 @@
+export declare const backtick: (val: any) => string;
+export declare const getType: (val: any) => any;
+export declare type TypeDescriptor = 'null' | 'undefined' | 'string' | 'number' | 'boolean' | 'symbol' | 'bigint' | ArrayConstructor | Uint8ArrayConstructor | ArrayBufferConstructor | [Function, string];
+export declare const isType: (value: any, type: TypeDescriptor) => boolean;
+export declare const createTypeErrorMsg: (value: any, valueName: string, types: TypeDescriptor[]) => string;
+export declare const assertIs: (value: any, valueName: string, types: TypeDescriptor[]) => void;
+export declare const assertOrUndefined: (value: any, valueName: string, types: TypeDescriptor[]) => void;
+export declare const assertEachIs: (values: any[], valueName: string, types: TypeDescriptor[]) => void;
+export declare const assertRange: (value: any, valueName: string, min: number, max: number) => void;
+export declare const assertMultiple: (value: any, valueName: string, multiplier: number) => void;
+//# sourceMappingURL=validators.d.ts.map

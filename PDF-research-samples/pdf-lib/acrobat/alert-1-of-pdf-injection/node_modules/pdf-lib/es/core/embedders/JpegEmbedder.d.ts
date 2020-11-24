@@ -1,0 +1,24 @@
+import PDFRef from "../objects/PDFRef";
+import PDFContext from "../PDFContext";
+declare enum ColorSpace {
+    DeviceGray = "DeviceGray",
+    DeviceRGB = "DeviceRGB",
+    DeviceCYMK = "DeviceCYMK"
+}
+/**
+ * A note of thanks to the developers of https://github.com/foliojs/pdfkit, as
+ * this class borrows from:
+ *   https://github.com/devongovett/pdfkit/blob/e71edab0dd4657b5a767804ba86c94c58d01fbca/lib/image/jpeg.coffee
+ */
+declare class JpegEmbedder {
+    static for(imageData: Uint8Array): Promise<JpegEmbedder>;
+    readonly bitsPerComponent: number;
+    readonly height: number;
+    readonly width: number;
+    readonly colorSpace: ColorSpace;
+    private readonly imageData;
+    private constructor();
+    embedIntoContext(context: PDFContext, ref?: PDFRef): Promise<PDFRef>;
+}
+export default JpegEmbedder;
+//# sourceMappingURL=JpegEmbedder.d.ts.map

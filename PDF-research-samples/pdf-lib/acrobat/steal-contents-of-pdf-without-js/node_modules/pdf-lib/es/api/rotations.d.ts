@@ -1,0 +1,20 @@
+export declare enum RotationTypes {
+    Degrees = "degrees",
+    Radians = "radians"
+}
+export interface Radians {
+    type: RotationTypes.Radians;
+    angle: number;
+}
+export interface Degrees {
+    type: RotationTypes.Degrees;
+    angle: number;
+}
+export declare type Rotation = Radians | Degrees;
+export declare const radians: (radianAngle: number) => Radians;
+export declare const degrees: (degreeAngle: number) => Degrees;
+export declare const degreesToRadians: (degree: number) => number;
+export declare const radiansToDegrees: (radian: number) => number;
+export declare const toRadians: (rotation: Rotation) => number;
+export declare const toDegrees: (rotation: Rotation) => number;
+//# sourceMappingURL=rotations.d.ts.map

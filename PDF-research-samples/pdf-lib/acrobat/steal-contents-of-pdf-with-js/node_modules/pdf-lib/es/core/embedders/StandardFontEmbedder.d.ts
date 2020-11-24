@@ -1,0 +1,34 @@
+import { Font, FontNames, IEncoding as Encoding } from '@pdf-lib/standard-fonts';
+import PDFHexString from "../objects/PDFHexString";
+import PDFRef from "../objects/PDFRef";
+import PDFContext from "../PDFContext";
+export interface Glyph {
+    code: number;
+    name: string;
+}
+/**
+ * A note of thanks to the developers of https://github.com/foliojs/pdfkit, as
+ * this class borrows from:
+ *   https://github.com/foliojs/pdfkit/blob/f91bdd61c164a72ea06be1a43dc0a412afc3925f/lib/font/afm.coffee
+ */
+declare class StandardFontEmbedder {
+    static for: (fontName: FontNames) => StandardFontEmbedder;
+    readonly font: Font;
+    readonly encoding: Encoding;
+    readonly fontName: string;
+    private constructor();
+    /**
+     * Encode the JavaScript string into this font. (JavaScript encodes strings in
+     * Unicode, but standard fonts use either WinAnsi, ZapfDingbats, or Symbol
+     * encodings)
+     */
+    encodeText(text: string): PDFHexString;
+    widthOfTextAtSize(text: string, size: number): number;
+    heightOfFontAtSize(size: number): number;
+    sizeOfFontAtHeight(height: number): number;
+    embedIntoContext(context: PDFContext, ref?: PDFRef): PDFRef;
+    private widthOfGlyph;
+    private encodeTextAsGlyphs;
+}
+export default StandardFontEmbedder;
+//# sourceMappingURL=StandardFontEmbedder.d.ts.map
